@@ -1,0 +1,12 @@
+{
+  "$schema": "https://moddbcdn.vintagestory.at/schema/modinfo.latest.json",
+  "type": "code",
+  "modid": "playercorpse",
+  "name": "Player Corpse",
+  "authors": [ "DArkHekRoMaNT", "azurempress" ],
+  "version": "1.13.0",
+  "dependencies": {
+    "game": "1.22.2",
+    "commonlibforked": "2.8.1"
+  }
+}
