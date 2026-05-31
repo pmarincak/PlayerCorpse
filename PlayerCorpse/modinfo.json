@@ -1,9 +1,9 @@
 {
   "$schema": "https://moddbcdn.vintagestory.at/schema/modinfo.latest.json",
   "type": "code",
-  "modid": "playercorpse",
+  "modid": "playercorpseforked-azu",
   "name": "Player Corpse",
-  "authors": [ "DArkHekRoMaNT", "azurempress" ],
+  "authors": [ "azurempress" ],
   "version": "1.13.0",
   "dependencies": {
     "game": "1.22.2",
