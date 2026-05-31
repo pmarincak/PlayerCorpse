@@ -6,7 +6,7 @@
   "authors": [ "azurempress" ],
   "version": "1.13.0",
   "dependencies": {
-    "game": "1.22.2",
+    "game": "1.22.0",
     "commonlibforked": "2.8.1"
   }
 }
