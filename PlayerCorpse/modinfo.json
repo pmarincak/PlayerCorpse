@@ -1,7 +1,7 @@
 {
   "$schema": "https://moddbcdn.vintagestory.at/schema/modinfo.latest.json",
   "type": "code",
-  "modid": "playercorpseforked-azu",
+  "modid": "playercorpseforkedazu",
   "name": "Player Corpse",
   "authors": [ "azurempress" ],
   "version": "1.13.0",
