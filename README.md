@@ -14,7 +14,7 @@ This is a fork of the [original PlayerCorpse mod by DArkHekRoMaNT](https://githu
 
 ## Download
 
-1. [ModDB]()
+1. [ModDB](https://mods.vintagestory.at/playercorpseforkedazu)
 2. [Releases](https://github.com/pmarincak/PlayerCorpse/releases)
 
 ## Maintainers & Contribution
