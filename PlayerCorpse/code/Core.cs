@@ -26,13 +26,19 @@ namespace PlayerCorpse
             {
                 Config.CreateWaypoint = Config.CreateWaypointMode.Always;
 
-                var hasDeathWaypointsMods = api.Assets.Get<string[]>($"{Mod.Info.ModID}:config/hasdeathwaypointsmods.json");
-                foreach (var modid in hasDeathWaypointsMods)
+                try
                 {
-                    if (api.ModLoader.IsModEnabled(modid))
+                    var hasDeathWaypointsMods = api.Assets.Get<string[]>($"{Mod.Info.ModID}:config/hasdeathwaypointsmods.json");
+                    foreach (var modid in hasDeathWaypointsMods)
                     {
-                        Config.CreateWaypoint = Config.CreateWaypointMode.None;
+                        if (api.ModLoader.IsModEnabled(modid))
+                        {
+                            Config.CreateWaypoint = Config.CreateWaypointMode.None;
+                        }
                     }
+                } catch
+                {
+
                 }
             }
         }
