@@ -4,9 +4,8 @@
   "modid": "playercorpseforkedazu",
   "name": "Player Corpse",
   "authors": [ "azurempress" ],
-  "version": "1.13.1",
+  "version": "1.14.0",
   "dependencies": {
-    "game": "1.22.0",
-    "commonlibforked": "2.8.1"
+    "game": "1.22.0"
   }
 }

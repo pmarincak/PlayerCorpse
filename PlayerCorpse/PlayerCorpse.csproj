@@ -47,10 +47,6 @@
 			<HintPath>$(VINTAGE_STORY)/Lib/Microsoft.Data.Sqlite.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
-		<Reference Include="CommonLib">
-			<HintPath>$(VINTAGE_STORY_DATA)/Mods/CommonLibForked_VS1.22.0_net10_v2.8.1/CommonLib.dll</HintPath>
-			<Private>false</Private>
-		</Reference>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -67,5 +63,12 @@
 
 	<ItemGroup>
 		<PackageReference Include="Nullable" Version="1.3.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="code\commonlib\config\" />
+	  <Folder Include="code\commonlib\extensions\" />
+	  <Folder Include="code\commonlib\ui\" />
+	  <Folder Include="code\commonlib\utils\" />
 	</ItemGroup>
 </Project>
