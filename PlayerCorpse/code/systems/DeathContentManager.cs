@@ -118,15 +118,14 @@ namespace PlayerCorpse.Systems
             BlockPos floorPos = TryFindFloor(byPlayer.Entity.Pos.AsBlockPos);
 
             // Attempt to align the corpse to the center of the block so that it does not crawl higher
-            Vec3d pos = floorPos.ToVec3d().Add(.5, 0, .5);
+            floorPos.Add(0.5f, 0, 0.5f);
 
-            corpse.Pos.SetPos(pos);
-            corpse.Pos.SetPos(pos);
+            corpse.Pos.SetPosWithDimension(floorPos.ToVec3d());
             corpse.World = _sapi.World;
 
             return corpse;
         }
-
+        
         /// <summary> Try to find the nearest block with collision below </summary>
         private BlockPos TryFindFloor(BlockPos pos)
         {
@@ -227,9 +226,14 @@ namespace PlayerCorpse.Systems
                     return;
                 }
 
+                // Remove dimension information for the waypoint
+                // If you do not and you teleport to the waypoint you will be sent to the void
+                var block_position = byPlayer.Pos.AsBlockPos;
+                block_position.SetDimension(0); 
+
                 Waypoint wp = new()
                 {
-                    Position = byPlayer.Pos.AsBlockPos.ToVec3d(),
+                    Position = block_position.ToVec3d(),
                     Title = Lang.Get($"{Constants.ModId}:death-waypoint-name", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
                     Pinned = Core.Config.PinWaypoint,
                     Icon = Core.Config.WaypointIcon,
