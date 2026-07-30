@@ -16,7 +16,6 @@ namespace PlayerCorpse.Items
         public static long SearchCooldown => 5000;
         public static long OffHandSearchCooldown => 10000;
         public static long OffHandParticleEmitCooldown => 250;
-        public static int SearchRadius => 3;
 
         private readonly SimpleParticleProperties _particles = new()
         {
@@ -126,7 +125,7 @@ namespace PlayerCorpse.Items
                     ownerUID = null; // show all corpses in creative
                 }
 
-                foreach (EntityPlayerCorpse corpse in GetCorpsesAround(SearchRadius, byEntity.Pos.XYZInt, ownerUID))
+                foreach (EntityPlayerCorpse corpse in GetCorpsesAround(Core.Config.CorpseCompassChunkSearchRadius, byEntity.Pos.XYZInt, ownerUID))
                 {
                     double currDistance = byEntity.Pos.SquareDistanceTo(corpse.Pos);
                     if (currDistance <= distance)

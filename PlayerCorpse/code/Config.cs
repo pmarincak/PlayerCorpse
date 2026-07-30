@@ -58,5 +58,9 @@ namespace PlayerCorpse
         [Description("Override vanilla keep inventory system, so you can drop armor and cloth")]
         public DropArmorMode DropArmorOnDeath { get; set; } = DropArmorMode.Vanilla;
         public enum DropArmorMode { Vanilla, Armor, ArmorAndCloth };
+
+        [Description("Chunk Search Radius for Corpse Compass.")]
+        [Range(1, 10)]
+        public int CorpseCompassChunkSearchRadius { get; set; } = 3;
     }
 }
