@@ -248,10 +248,14 @@ namespace PlayerCorpse.Entities
                         continue;
                     }
 
-                    if (!byPlayer.InventoryManager.TryGiveItemstack(slot.Itemstack))
-                    {
-                        Api.World.SpawnItemEntity(slot.Itemstack, byPlayer.Entity.Pos.XYZ.AddCopy(0, 1, 0));
-                    }
+                    var itemstack = slot.Itemstack.Clone();
+                    var was_given = byPlayer.InventoryManager.TryGiveItemstack(itemstack);
+
+                    // The item stack will contain the remainder if successful - otherwise clone the original
+                    var remainder_itemstack = was_given ? itemstack : slot.Itemstack.Clone();
+                    // Drop the remainder on the floor
+                    Api.World.SpawnItemEntity(remainder_itemstack, byPlayer.Entity.Pos.XYZ.AddCopy(0, 1, 0));
+                    
                     slot.Itemstack = null;
                     slot.MarkDirty();
                 }
