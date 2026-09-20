@@ -4,6 +4,7 @@ about: Create a report to help us improve
 title: ''
 labels: bug
 assignees: ''
+type: Bug
 
 ---
 
@@ -39,3 +40,8 @@ If applicable, add game logs to help explain your problem.
 
 **Additional context**
 Add any other context about the problem here.
+
+**Acknowledgement**
+By submitting this bug report you acknowledge and understand that you are requesting free labor from contributors to make changes to this project. You understand that filling out this form accurately with as much information as possible respects others time and effort. You have filled this form out to the best of your ability.
+
+[Yes/No]
