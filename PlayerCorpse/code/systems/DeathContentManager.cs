@@ -248,7 +248,7 @@ namespace PlayerCorpse.Systems
 
         private static WaypointMapLayer? GetMapLayer(ICoreAPI api)
         {
-            return api.ModLoader.GetModSystem<WorldMapManager>().MapLayers.FirstOrDefault(ml => ml is WaypointMapLayer) as WaypointMapLayer;
+            return api.ModLoader.GetModSystem<WorldMapManager>()?.MapLayers?.FirstOrDefault(ml => ml is WaypointMapLayer) as WaypointMapLayer;
         }
 
         public static void RemoveDeathPoint(EntityPlayer byPlayer, EntityPlayerCorpse corpseEntity)
