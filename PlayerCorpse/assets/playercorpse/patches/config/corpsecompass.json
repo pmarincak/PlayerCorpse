@@ -1,6 +1,6 @@
 [
   {
-    "file": "recipes/grid/corpsecompass.json",
+    "file": "playercorpse:recipes/grid/corpsecompass.json",
     "op": "replace",
     "path": "/enabled",
     "value": "false",
@@ -10,7 +10,7 @@
     }
   },
   {
-    "file": "itemtypes/corpsecompass.json",
+    "file": "playercorpse:itemtypes/corpsecompass.json",
     "op": "replace",
     "path": "/enabled",
     "value": "false",

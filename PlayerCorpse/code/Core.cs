@@ -15,6 +15,7 @@ namespace PlayerCorpse
             Config = configs.GetConfig<Config>();
 
             api.World.Config.SetBool($"{Mod.Info.ModID}:CorpseCompassEnabled", Config.CorpseCompassEnabled);
+            api.World.Config.SetBool($"{Mod.Info.ModID}:UseLargeCorpse", Config.UseLargeCorpse);
 
             api.RegisterEntity("EntityPlayerCorpse", typeof(EntityPlayerCorpse));
             api.RegisterItemClass("ItemCorpseCompass", typeof(ItemCorpseCompass));

@@ -2,7 +2,10 @@
   "code": "playercorpse",
   "class": "EntityPlayerCorpse",
   "habitat": "land",
-  "hitboxSize": { "x": 0.9, "y": 0.3 },
+  "hitboxSize": {
+    "x": 0.9,
+    "y": 0.3
+  },
   "client": {
     "renderer": "Shape",
     "shape": { "base": "game:block/bone/carcass/humanoid2" },
@@ -16,7 +19,11 @@
     "behaviors": [
       { "code": "passivephysics" },
       { "code": "floatupwhenstuck" },
-      { "code": "health", "currenthealth": 100, "maxhealth": 100 }
+      {
+        "code": "health",
+        "currenthealth": 100,
+        "maxhealth": 100
+      }
     ]
   },
   "falldamage": false

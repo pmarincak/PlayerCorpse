@@ -65,5 +65,8 @@ namespace PlayerCorpse
 
         [Description("Whether to display particles above the corpse or not.")]
         public bool EnableCorpseParticles { get; set; } = true;
+
+        [Description("Whether to use the large skeleton model or the smaller one.")]
+        public bool UseLargeCorpse { get; set; } = true;
     }
 }

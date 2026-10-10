@@ -1,0 +1,12 @@
+[
+  {
+    "file": "playercorpse:entities/playercorpse.json",
+    "op": "replace",
+    "path": "/client/shape/base",
+    "value": "game:block/bone/carcass/humanoid1",
+    "condition": {
+      "when": "playercorpseforkedazu:UseLargeCorpse",
+      "isValue": "false"
+    }
+  }
+]
