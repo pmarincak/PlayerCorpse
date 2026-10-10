@@ -62,5 +62,8 @@ namespace PlayerCorpse
         [Description("Chunk Search Radius for Corpse Compass.")]
         [Range(1, 10)]
         public int CorpseCompassChunkSearchRadius { get; set; } = 3;
+
+        [Description("Whether to display particles above the corpse or not.")]
+        public bool EnableCorpseParticles { get; set; } = true;
     }
 }

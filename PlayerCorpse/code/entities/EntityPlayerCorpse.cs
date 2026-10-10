@@ -136,25 +136,34 @@ namespace PlayerCorpse.Entities
                 }
             }
 
-            if (Api is ICoreClientAPI capi)
+            SpawnParticles();
+        }
+
+        private void SpawnParticles()
+        {
+            if (!Core.Config.EnableCorpseParticles || !(Api is ICoreClientAPI capi))
             {
-                if (OwnerUID == capi.World.Player.PlayerUID && Api.World.Rand.NextDouble() < 0.3)
-                {
-                    capi.World.SpawnParticles(new SimpleParticleProperties()
-                    {
-                        MinPos = Pos.XYZ,
-                        Color = GetRandomColor(Api.World.Rand),
-                        MinSize = 0.2f,
-                        MaxSize = 0.3f,
-                        MinVelocity = new Vec3f(-0.1f, 0.5f, -0.1f),
-                        AddVelocity = new Vec3f(0.2f, 1.5f, 0.2f),
-                        MinQuantity = 1,
-                        LifeLength = 1,
-                        WithTerrainCollision = false,
-                        LightEmission = DarkColor.FromARGB(255, 255, 255, 255).RGBA
-                    });
-                }
+                return;
             }
+
+            if (!(OwnerUID == capi.World.Player.PlayerUID && Api.World.Rand.NextDouble() < 0.3))
+            {
+                return;
+            }
+
+            capi.World.SpawnParticles(new SimpleParticleProperties()
+            {
+                MinPos = Pos.XYZ,
+                Color = GetRandomColor(Api.World.Rand),
+                MinSize = 0.2f,
+                MaxSize = 0.3f,
+                MinVelocity = new Vec3f(-0.1f, 0.5f, -0.1f),
+                AddVelocity = new Vec3f(0.2f, 1.5f, 0.2f),
+                MinQuantity = 1,
+                LifeLength = 1,
+                WithTerrainCollision = false,
+                LightEmission = DarkColor.FromARGB(255, 255, 255, 255).RGBA
+            });
         }
 
         private void ForceUpdateSecondsPassedOnServer()
