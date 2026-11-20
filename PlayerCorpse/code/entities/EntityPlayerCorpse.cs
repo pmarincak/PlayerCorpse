@@ -8,6 +8,7 @@ using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
+using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 
@@ -174,13 +175,14 @@ namespace PlayerCorpse.Entities
             }
         }
 
-        public override void OnReceivedClientPacket(IServerPlayer player, int packetid, byte[] data)
+        public override void OnReceivedClientPacket(IServerPlayer player, int packetid, SerializedData packetData, ref CachedAccessPerms perms)
         {
-            base.OnReceivedClientPacket(player, packetid, data);
+            base.OnReceivedClientPacket(player, packetid, packetData,ref perms);
 
             if (packetid == 141325)
             {
-                if (data?.Length > 0 && data[0] > SecondsPassed)
+                var data = packetData.RawData;
+                if (data.Length > 0 && data[0] > SecondsPassed)
                 {
                     SecondsPassed = data[0];
                 }
@@ -330,9 +332,9 @@ namespace PlayerCorpse.Entities
             base.ToBytes(writer, forClient);
         }
 
-        public override void FromBytes(BinaryReader reader, bool forClient)
+        public override void FromBytes(ref BinarySpanReader reader, bool forClient)
         {
-            base.FromBytes(reader, forClient);
+            base.FromBytes(ref reader, forClient);
 
             if (WatchedAttributes != null)
             {

@@ -4,8 +4,8 @@
   "modid": "playercorpseforkedazu",
   "name": "Player Corpse",
   "authors": [ "azurempress" ],
-  "version": "1.16.0",
+  "version": "1.16.1",
   "dependencies": {
-    "game": "1.22.0"
+    "game": "1.23.0-pre.1"
   }
 }
